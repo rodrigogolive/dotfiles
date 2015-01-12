@@ -1,0 +1,62 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address.
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+net_avg_samples 2
+
+out_to_stderr no
+no_buffers yes
+uppercase no
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar, see [1] for more
+# http://conky.sourceforge.net/variables.html
+[
+    {"full_text" : "RAM $mem/$memmax - $memperc%" , "color" :  ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif}},
+    {"full_text" : "swap $swap/$swapmax - $swapperc%", "color" : "\#ffffff" },
+
+    {"full_text" : "CPU $cpu}% @ ${freq_g}GHz"},
+    {"full_text" : "${exec sensors | awk '/Core 0/ {print $3}'}"},
+
+    ${if_up wlan0}
+        {"full_text" : "wlan0 ${upspeed wlan0}/${downspeed wlan0} on $wireless_essid ${wireless_link_qual_perc wlan0}%"},
+    $else
+        ${if_up eth0}
+            {"full_text" : "eth0 ${upspeed eth0}/${downspeed eth0}"},
+    $else
+        {"full_text" : "disconnected"},$endif
+    $endif
+
+    {"full_text" : "Mixer ${exec $HOME/.i3/scripts/amixer-wrapper state}", "color" : "\#ffffff" },
+    {"full_text" : "${time %a %d/%m/%y} ${time %H:%M}", "color" : "\#ffffff" }
+],

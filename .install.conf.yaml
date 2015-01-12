@@ -2,6 +2,9 @@
 - link:
     # mutt
     ~/.mutt: mutt
+    # i3wm
+    ~/.i3: i3
+    ~/.config/dunst: dunst
 - shell:
     # mutt
     -

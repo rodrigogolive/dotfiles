@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Simple amixer wrapper for i3/conky
+# https://github.com/rodrigogolive/dotfiles | http://blog.thecoreme.org
+
+# settings
+VOLINCDEC=5
+CARD=0
+
+case $1 in
+    state)
+        state=$(amixer -c $CARD get Master | grep  Mono | awk '{print $6}' | tr -d '\n[]%')
+        vol=$(amixer -c $CARD get Master | grep  Mono | awk '{print $4}' | tr -d '\n[]%')
+
+        if [ $state == "off" ]
+        then
+            echo "mute"
+        else
+            echo $vol%
+        fi
+
+        ;;
+    inc)
+        amixer -c $CARD set Master $VOLINCDEC%+
+        ;;
+    dec)
+        amixer -c $CARD set Master $VOLINCDEC%-
+        ;;
+    toggle)
+        amixer -c $CARD set Master toggle
+        ;;
+esac
