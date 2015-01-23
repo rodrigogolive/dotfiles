@@ -109,4 +109,6 @@ folder-hook . exec first-entry
 set header_cache = ~/.cache/mutt/
 set message_cachedir = $header_cache
 
-source ~/.mutt/accounts/personal
+#source ~/.mutt/accounts/personal
+# not sourcing an account because I'm using 2 different instances of mutt,
+# one for each type of account. Example: mutt -e 'source ~/.mutt/accounts/work'
