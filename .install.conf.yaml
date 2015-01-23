@@ -1,3 +1,9 @@
 - clean: ['~']
-- link: {}
-- shell: []
+- link:
+    # mutt
+    ~/.mutt: mutt
+- shell:
+    # mutt
+    -
+        - ""
+        - "You must install goobook to fetch/add contacts from Google\n\tex.: easy_install goobook"
