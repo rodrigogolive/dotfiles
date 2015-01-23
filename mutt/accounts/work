@@ -1,0 +1,28 @@
+# IMAP
+set my_name = "Rodrigo Oliveira"
+set imap_user = rodrigo.oliveira@byne.com.br
+set imap_pass = `gpg2 --quiet --batch -d ~/.mutt/accounts/work.asc`
+set folder = imaps://$imap_user@imap.gmail.com/
+
+set spoolfile = +INBOX
+mailboxes +INBOX
+
+set postponed = +[Gmail]/Drafts
+set trash = +[Gmail]/Trash
+
+# SMTP
+set smtp_url = smtps://$imap_user@smtp.gmail.com/
+set smtp_pass = $imap_pass
+set folder = imaps://$imap_user@imap.gmail.com/
+set from = $imap_user
+set realname = $my_name
+set envelope_from = yes
+
+set hostname = byne.com.br
+
+unset record
+
+set query_command="goobook -c ~/.mutt/accounts/goobook-work query '%s'"
+macro index,pager a "<pipe-message>goobook c ~/.mutt/accounts/goobook-work add<return>" "add sender to google contacts"
+
+# vim: ft=muttrc
