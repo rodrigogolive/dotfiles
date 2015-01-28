@@ -2,9 +2,9 @@
 - link:
     # mutt
     ~/.mutt: mutt
-    # i3wm
-    ~/.i3: i3
-    ~/.config/dunst: dunst
+    # i3wm (I tried hard to have i3 to nicely run on macos. failed miserably)
+    #~/.i3: i3
+    #~/.config/dunst: dunst
     # git
     ~/.gitconfig: gitconfig
     # mplayer
