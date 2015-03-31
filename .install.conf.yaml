@@ -15,6 +15,10 @@
     -
         - git clone --recursive https://github.com/powerline/powerline.git ~/downloads/GIT/powerline
         - "Cloning POWERLINE dependency (Run it afterwards: python setup.py build; powerline-daemon --replace)"
+    # tmux plugin manager
+    -
+        - git clone --recursive https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        - "Cloning TMUX PLUGIN MANAGER dependency (Reload tmux afterwards)"
 - link:
     # mutt
     ~/.mutt: mutt
@@ -27,3 +31,5 @@
     ~/.mplayer: mplayer
     # powerline
     ~/.config/powerline: powerline
+    # tmux
+    ~/.tmux.conf: tmux.conf
