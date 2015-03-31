@@ -1,0 +1,59 @@
+{
+    "default_module": "powerline.segments.common",
+    "segment_data": {
+        "powerline.segments.common.sys.uptime": {
+            "before": "  "
+        },
+        "date": {
+            "before": "  "
+        },
+        "time": {
+            "before": "  "
+        },
+        "powerline.segments.common.net.hostname": {
+            "before": "  "
+        }
+    },
+    "segments": {
+        "right": [
+            {
+                "function": "powerline.segments.common.players.spotify",
+                "name": "player"
+            },
+            {
+                "function": "powerline.segments.common.bat.battery",
+                "args": {
+                    "gamify": true,
+                    "full_heart": " ",
+                    "empty_heart": " "
+                }
+            },
+            {
+                "function": "powerline.segments.common.sys.system_load",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.sys.uptime",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "args": {
+                    "format": "%d-%m-%Y",
+                    "istime": false
+                }
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",
+                "args": {
+                    "format": "%H:%M",
+                    "istime": false
+                }
+            },
+            {
+                "function": "powerline.segments.common.net.hostname"
+            }
+        ]
+    }
+}

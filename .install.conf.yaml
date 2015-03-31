@@ -11,6 +11,10 @@
     -
         - ln -s ~/downloads/GIT/git/contrib/completion/git-prompt.sh ~/.git-prompt.sh
         - "Linking 'git-prompt.sh'"
+    # powerline
+    -
+        - git clone --recursive https://github.com/powerline/powerline.git ~/downloads/GIT/powerline
+        - "Cloning POWERLINE dependency (Run it afterwards: python setup.py build; powerline-daemon --replace)"
 - link:
     # mutt
     ~/.mutt: mutt
@@ -21,3 +25,5 @@
     ~/.gitconfig: gitconfig
     # mplayer
     ~/.mplayer: mplayer
+    # powerline
+    ~/.config/powerline: powerline
