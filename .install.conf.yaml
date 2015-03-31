@@ -23,6 +23,22 @@
     -
         - git clone --recursive https://github.com/altercation/solarized.git ~/downloads/GIT/solarized
         - "Cloning SOLARIZED dependency (FUCK YEAHHH!)"
+    # oh-my-zsh
+    -
+        - git clone --recursive https://github.com/robbyrussell/oh-my-zsh.git ~/downloads/GIT/oh-my-zsh
+        - "Cloning OH-MY-ZSH dependency (use antigen instead?)"
+    # zsh-completions
+    -
+        - git clone --recursive https://github.com/zsh-users/zsh-completions ~/downloads/GIT/zsh-completions
+        - "Cloning ZSH-COMPLETIONS dependency"
+    # z
+    -
+        - git clone --recursive https://github.com/rupa/z ~/downloads/GIT/z
+        - "Cloning Z dependency"
+    # s
+    -
+        - git clone --recursive https://github.com/haosdent/s ~/downloads/GIT/s
+        - "Cloning S dependency"
 - link:
     # mutt
     ~/.mutt: mutt
@@ -39,3 +55,7 @@
     ~/.tmux.conf: tmux.conf
     # Xresources
     ~/.Xresources: Xresources
+    # profile, bashrc and zshrc
+    ~/.profile: profile
+    ~/.bashrc: bashrc
+    ~/.zshrc: zshrc
