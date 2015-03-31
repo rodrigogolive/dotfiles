@@ -1,0 +1,22 @@
+[user]
+    email = rodrigo@deadbodyoutline.com
+    name = Rodrigo Oliveira
+[core]
+    pager = less -XRMSI
+[color]
+    ui = auto
+[log]
+    decorate = short
+[alias]
+    root = !pwd
+    log-graph = log --graph --all --source --stat
+    show-graph = show --graph
+    please = "!f() { arg=$1; if [ x$arg == x ]; then arg=origin; fi; git config --list | grep remote.$arg.url | cut -d'=' -f2 | tail -n1; }; f"
+    please-all = "!f() { git config --list | grep remote\\.\\*\\.url --color=never | grep -v alias | cut -d'.' -f2- | sed 's/.url=/:\t/'; }; f"
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false

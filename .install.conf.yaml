@@ -1,12 +1,21 @@
 - clean: ['~']
+- shell:
+    # mutt
+    -
+        - ""
+        - "You must install goobook to fetch/add contacts from Google\n\tex.: easy_install goobook"
+    # git
+    -
+        - git clone --recursive https://github.com/git/git.git ~/downloads/GIT/git
+        - "Cloning GIT dependency (check for alternatives)"
+    -
+        - ln -s ~/downloads/GIT/git/contrib/completion/git-prompt.sh ~/.git-prompt.sh
+        - "Linking 'git-prompt.sh'"
 - link:
     # mutt
     ~/.mutt: mutt
     # i3wm
     ~/.i3: i3
     ~/.config/dunst: dunst
-- shell:
-    # mutt
-    -
-        - ""
-        - "You must install goobook to fetch/add contacts from Google\n\tex.: easy_install goobook"
+    # git
+    ~/.gitconfig: gitconfig
