@@ -19,6 +19,10 @@
     -
         - git clone --recursive https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         - "Cloning TMUX PLUGIN MANAGER dependency (Reload tmux afterwards)"
+    # solarized
+    -
+        - git clone --recursive https://github.com/altercation/solarized.git ~/downloads/GIT/solarized
+        - "Cloning SOLARIZED dependency (FUCK YEAHHH!)"
 - link:
     # mutt
     ~/.mutt: mutt
@@ -33,3 +37,5 @@
     ~/.config/powerline: powerline
     # tmux
     ~/.tmux.conf: tmux.conf
+    # Xresources
+    ~/.Xresources: Xresources

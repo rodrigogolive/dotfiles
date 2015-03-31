@@ -1,0 +1,30 @@
+XTerm*ttyModes:         erase ^?
+XTerm*VT100.Translations: \
+        #override <Key>BackSpace: string(0x7f) \n\
+                  <Key>Delete:    string(0x1b) string("[3~")
+
+XTerm*on2Clicks:  regex [^/@ \n]+
+XTerm*on3Clicks:  regex [^ \n]+
+XTerm*on4Clicks:  regex [^#$]+
+XTerm*on5Clicks:  line
+
+! Fix alt key
+XTerm*metaSendsEscape: true
+
+XTerm*faceName: xft:PragmataPro for Powerline:pixelsize=11
+!XTerm*faceName: xft:Input:pixelsize=11
+xterm*locale: true
+xterm.utf8: true
+xterm*utf8Title: true
+xterm.termName: xterm-256color
+
+! select to clipboard
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
+! Solarized
+#include "/home/mdk/downloads/GIT/solarized/xresources/solarized"
+
+! cursos theme
+! find /usr/share/icons ~/.icons -type d -name "cursors"
+Xcursor.theme: Oxygen_Black
+Xcursor.size: 16
