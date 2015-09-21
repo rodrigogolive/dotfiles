@@ -110,10 +110,28 @@ eval `keychain --eval --quiet --agents "ssh,gpg" --quick`
 PATH="$HOME/.bin:$PATH"
 PATH="/sbin:/usr/sbin:$PATH"
 
+# osx
+PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+MANPATH="/opt/local/share/man:$MANPATH"
+PATH="/opt/local/libexec/gnubin/:$PATH"
+
+PATH="/usr/local/sbin/:$PATH"
+
+alias tig='TERM=screen-256color tig'
+alias weechat='TERM=screen-256color weechat'
+alias htop='TERM=screen-256color htop'
+
+alias ldd="otool -L"
+
+export DYLD_FALLBACK_LIBRARY_PATH="/opt/local/lib"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+# osx
+
 export PYTHONPATH=$HOME/downloads/GIT/powerline
 PATH="$HOME/downloads/GIT/powerline/scripts:$PATH"
 
 export POWERLINE_COMMAND=powerline
+export POWERLINE_COMMAND="$HOME/downloads/GIT/powerline/client/powerline.sh"
 pdpid=$(pgrep -f powerline-daemon)
 if [ -z $pdpid ]
 then
@@ -169,7 +187,6 @@ then
 fi
 
 eval $(dircolors ~/downloads/GIT/dircolors-solarized/dircolors.256dark)
-
 # my own completions
 source $HOME/.completions/*
 

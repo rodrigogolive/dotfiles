@@ -7,8 +7,14 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# virtualenv + virtualenvwrapper
+VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
+WORKON_HOME="~/.envs"
+source /opt/local/bin/virtualenvwrapper.sh-2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
+
 # NOTE: do not forget to add fasd to your PATH
-plugins=(vi-mode vundle colored-man fasd extract)
+plugins=(vi-mode vundle colored-man fasd extract virtualenv virtualenvwrapper)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
@@ -42,9 +48,9 @@ export HIST_IGNORE_SPACE=1
 function _gitPrompt() {
     git_status=$(__git_ps1 "%s")
 
-    git_status=$(echo $git_status | sed "s/*/ /")
-    git_status=$(echo $git_status | sed "s/>/ /")
-    git_status=$(echo $git_status | sed "s/</ /")
+    #git_status=$(echo $git_status | sed "s/*/ /")
+    #git_status=$(echo $git_status | sed "s/>/ /")
+    #git_status=$(echo $git_status | sed "s/</ /")
     # TODO =
 
     if [[ -n $git_status ]]
