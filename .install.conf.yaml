@@ -74,3 +74,4 @@
     ~/.vimrc: vim/vimrc
     ~/.vim/bundles.vim: vim/bundles.vim
     #~/.asoundrc: asoundrc
+    ~/.pythonrc: pythonrc
