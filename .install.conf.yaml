@@ -39,6 +39,10 @@
     -
         - git clone --recursive https://github.com/haosdent/s ~/downloads/GIT/s
         - "Cloning S dependency"
+    # Vundle
+    -
+        - git clone --recursive https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        - "Cloning VUNDLE dependency (Run it afterwards: vim +PluginInstall +qall)"
 - link:
     # mutt
     ~/.mutt: mutt
@@ -59,3 +63,6 @@
     ~/.profile: profile
     ~/.bashrc: bashrc
     ~/.zshrc: zshrc
+    # vim and its bundles
+    ~/.vimrc: vim/vimrc
+    ~/.vim/bundles.vim: vim/bundles.vim
