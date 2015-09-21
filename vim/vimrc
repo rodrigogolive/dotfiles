@@ -113,7 +113,7 @@ set ai "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
 set nu " line numbering
-set term=st
+set term=xterm
 set cursorline
 set autoindent
 set backspace=indent,eol,start

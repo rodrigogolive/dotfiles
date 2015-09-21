@@ -80,36 +80,52 @@ _git_please() {
 }
 
 # definicoes especificas por usuario
-if [ "$USER" = mdk ]
+if [ "$USER" = rodrigo ]
 then
     # ssh keys (and gpg) on keychain
     # add keys after '--quick'
     eval `keychain --eval --quiet --agents "ssh,gpg" --quick`
 
-    PATH="$HOME/.bin:/sbin:/usr/sbin:$PATH"
-
-    # XXX add function to enable/disable Android SDK/NDK devel
-    PATH="$HOME/projects/android/android-sdk/platform-tools:$HOME/projects/android/android-sdk/tools:$HOME/projects/android/android-ndk:$PATH"
+    # PATHs definition
+    PATH="$HOME/.bin/:$PATH"
     PATH="$HOME/downloads/GIT/powerline/scripts:$PATH" # powerline
-    export POWERLINE_COMMAND=powerline
-    export ANDROID_SDK_ROOT="/home/mdk/projects/android/android-sdk"
-    export SDK_ROOT="/home/mdk/projects/android/android-sdk"
-    export ANDROID_NDK_ROOT="/home/mdk/projects/android/android-ndk"
-    export NDK_ROOT="/home/mdk/projects/android/android-ndk"
-    export NDK_CCACHE=ccache
-    export JAVA_HOME="/usr/lib64/java"
-    #
 
-    # TV shows and movies :D
-    export TV_SHOWS="/media/KODI/TV_Shows"
-    export MOVIES="/media/KODI/Movies"
+    # NOTE: must run 'python setup.py build' on powerline directory
+    export POWERLINE_COMMAND="$HOME/downloads/GIT/powerline/client/powerline.sh"
+
+    pdpid=$(pgrep -f powerline-daemon)
+    if [ -z $pdpid ]
+    then
+        powerline-daemon -q&
+    fi
+
+    export PYTHONSTARTUP=$HOME/.pythonrc
+
+    alias mplayer='mplayer -vo corevideo'
+    alias qmlviewer='QML_IMPORT_TRACE=1 qmlviewer'
 
     # DROPCORE ;)
     export DROPCORE="$HOME/DockZ/DropCore"
+    PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    MANPATH="/opt/local/share/man:$MANPATH"
+    PATH="/opt/local/libexec/gnubin/:$PATH"
 
-    # mplayer things
-    alias mplayer='mplayer -ass -ao alsa -channels 6'
-    alias mplayer-hdmi='mplayer -ao alsa:device=hw=0.3 -fs -subfont-text-scale 3.5'
+    PATH="/usr/local/sbin/:$PATH"
+    PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
+    PATH="/opt/Qt5.4.0/5.4/clang_64/bin/:$PATH"
+
+    alias tig='TERM=screen-256color tig'
+    alias weechat='TERM=screen-256color weechat'
+    alias htop='TERM=screen-256color htop'
+
+    alias ldd="otool -L"
+
+    export DYLD_FALLBACK_LIBRARY_PATH="/opt/local/lib"
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
+    # mutt
+    alias mutt-personal="mutt -e 'source ~/.mutt/accounts/personal'"
+    alias mutt-work="mutt -e 'source ~/.mutt/accounts/work'"
 fi
 
 . ~/.extras/git-prompt.sh # symbolic link to the git repository completion script
@@ -134,7 +150,7 @@ alias bkpchrome='rm -rf ~/.config/chromium_BKP/; cp -r ~/.config/chromium{,_BKP}
 alias wget='wget -c'
 
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
-alias vless='/usr/share/vim/vim74/macros/less.sh'
+alias vless='/opt/local/share/vim/vim74/macros/less.sh'
 alias make='bear -a make'
 
 # simple bell, usefull when waiting the completion of something on another
@@ -150,9 +166,7 @@ export EDITOR="vim"
 export GIT_EDITOR=$EDITOR
 export SVN_EDITOR=$GIT_EDITOR
 
-export TERM="screen-256color"
-#export TERM="xterm-256color"
-#export TERM="st-256color"
+export TERM="xterm-256color"
 
 export PYTHONSTARTUP=$HOME/.pythonrc
 
@@ -162,3 +176,6 @@ then
 fi
 
 eval $(dircolors ~/downloads/GIT/dircolors-solarized/dircolors.256dark)
+
+# my own completions
+source $HOME/.completions/*

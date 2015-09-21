@@ -91,6 +91,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " vim-flake8 | https://github.com/nvie/vim-flake8
 Plugin 'nvie/vim-flake8'
 
+
+" vimpdb | https://github.com/byronyi/vimpdb (look for ~/.vimpdbrc)
+Plugin 'byronyi/vimpdb'
+
 call vundle#end()
 filetype plugin indent on
 

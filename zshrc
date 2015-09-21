@@ -4,14 +4,13 @@ export ZSH=$HOME/downloads/GIT/oh-my-zsh
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
-# virtualenv + virtualenvwrapper | XXX not using at home right now, remove?
-#VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
-#WORKON_HOME="~/.envs"
-#source /opt/local/bin/virtualenvwrapper.sh-2.7
-#export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
+# virtualenv + virtualenvwrapper
+VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
+WORKON_HOME="~/.envs"
+source /opt/local/bin/virtualenvwrapper.sh-2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
 
-plugins=(vi-mode vundle colored-man)
-#plugins=(vi-mode vundle colored-man virtualenv virtualenvwrapper)
+plugins=(vi-mode vundle colored-man virtualenv virtualenvwrapper)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
@@ -50,9 +49,9 @@ export HIST_IGNORE_SPACE=1
 function _gitPrompt() {
     git_status=$(__git_ps1 "%s")
 
-    git_status=$(echo $git_status | sed "s/*/ /")
-    git_status=$(echo $git_status | sed "s/>/ /")
-    git_status=$(echo $git_status | sed "s/</ /")
+    #git_status=$(echo $git_status | sed "s/*/ /")
+    #git_status=$(echo $git_status | sed "s/>/ /")
+    #git_status=$(echo $git_status | sed "s/</ /")
     # TODO =
 
     if [[ -n $git_status ]]

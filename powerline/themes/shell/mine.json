@@ -25,6 +25,10 @@
                 "priority": 10
             },
             {
+                "function": "powerline.segments.common.env.virtualenv",
+                "before": "◀ "
+            },
+            {
                 "function": "powerline.segments.common.env.environment",
                 "priority": 40,
                 "args": {

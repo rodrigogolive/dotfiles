@@ -2,31 +2,20 @@
     "default_module": "powerline.segments.common",
     "segment_data": {
         "powerline.segments.common.sys.uptime": {
-            "before": "  "
+            "before": "⇧  "
         },
         "date": {
-            "before": "  "
-        },
-        "time": {
-            "before": "  "
+            "before": "⌚ "
         },
         "powerline.segments.common.net.hostname": {
-            "before": "  "
+            "before": "⌂ "
         }
     },
     "segments": {
         "right": [
             {
-                "function": "powerline.segments.common.players.spotify",
+                "function": "powerline.segments.common.players.spotify_apple_script",
                 "name": "player"
-            },
-            {
-                "function": "powerline.segments.common.bat.battery",
-                "args": {
-                    "gamify": true,
-                    "full_heart": " ",
-                    "empty_heart": " "
-                }
             },
             {
                 "function": "powerline.segments.common.sys.system_load",

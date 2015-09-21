@@ -22,9 +22,4 @@ xterm.termName: xterm-256color
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 ! Solarized
-#include "/home/mdk/downloads/GIT/solarized/xresources/solarized"
-
-! cursos theme
-! find /usr/share/icons ~/.icons -type d -name "cursors"
-Xcursor.theme: Oxygen_Black
-Xcursor.size: 16
+#include "/Volumes/home/rodrigo/downloads/GIT/solarized/xresources/solarized"
