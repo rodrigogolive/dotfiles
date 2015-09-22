@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/downloads/GIT/oh-my-zsh
+export ZSH=$HOME/downloads/GIT/oh-my-zsh
 
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
@@ -22,7 +22,10 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
 # z | https://github.com/rupa/z
-source $HOME/downloads/GIT/z/z.sh
+#source $HOME/downloads/GIT/z/z.sh
+# fasd | https://github.com/clvv/fasd/
+# NOTE: do not forget to add fasd to your PATH
+eval "$(fasd --init auto)"
 # s | https://github.com/haosdent/s
 source $HOME/downloads/GIT/s/s.sh
 
@@ -57,16 +60,12 @@ precmd_functions+=(_gitPrompt)
 # use same colors from dircolors on complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# git-completion | XXX is it needed?
-#zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
-
 
 # key bindings (we need to re-enter them because vi-mode overwrite them)
 bindkey "^[[1;5C" forward-word # control + left arrow
 bindkey "^[[1;5D" backward-word # control + right arrow
 bindkey "^F" forward-word # control + f
 bindkey "^B" backward-word # control + b
-bindkey "^]" clear-screen # control + ] | MAC
 
 bindkey '^[[Z' reverse-menu-complete # shift + tab
 

@@ -31,14 +31,21 @@
     -
         - git clone --recursive https://github.com/zsh-users/zsh-completions ~/downloads/GIT/zsh-completions
         - "Cloning ZSH-COMPLETIONS dependency"
-    # z
+    # fasd
     -
-        - git clone --recursive https://github.com/rupa/z ~/downloads/GIT/z
-        - "Cloning Z dependency"
+        - git clone --recursive https://github.com/clvv/fasd.git ~/downloads/GIT/fasd
+        - "Cloning FASD dependency"
+    -
+        - ln -s ~/downloads/GIT/fasd/fasd ~/.bin/fasd
+        - "Linking 'fasd'"
     # s
     -
         - git clone --recursive https://github.com/haosdent/s ~/downloads/GIT/s
         - "Cloning S dependency"
+    # Bear
+    -
+        - git clone --recursive https://github.com/rizsotto/Bear.git ~/downloads/GIT/Bear
+        - "Cloning BEAR dependency (You should compile/install it afterwards)"
     # Vundle
     -
         - git clone --recursive https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
