@@ -1,3 +1,7 @@
+# TIPS:
+# - https://gist.github.com/kaleb/1289741
+# - http://stevelosh.com/blog/2012/10/the-homely-mutt/ (see reading email)
+# macports: mutt-devel +smtp +sasl +ssl -pop +headercache +idn +sidebar +trash +gpgme
 set editor=`echo \$EDITOR`
 
 set imap_delim_chars = '/'
@@ -11,21 +15,33 @@ set mail_check = 120
 set sidebar_visible = yes
 set sidebar_width = 36
 set sidebar_delim = ' │'
-set sidebar_sort = yes
-set sidebar_shortpath = yes
-set sidebar_folderindent = yes
+set sidebar_delim_chars = '/'
 
 color sidebar_new cyan default
 
 # moving
 bind index,pager \cp sidebar-prev
 bind index,pager \cn sidebar-next
-# alt+o
+
+# scroll mals by line; S-j/k go to next/prev mail
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+
+bind index,pager R group-reply
+
+# save to draft
+bind compose p postpone-message
+# saved drafts
+bind index p recall-message
+
+# ESC+o
 bind index,pager <ESC>o sidebar-open
 
 # statusbar
 set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_format = "───[ Label: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%?p?( %p postponed )?───%>─"
 
 set include
 
@@ -43,17 +59,22 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set pager_stop
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 
+set smart_wrap
+
 auto_view text/html text/richtext
 alternative_order text/plain text/enriched text/html text image/*
-#alternative_order text/plain text/enriched text/html
 set mailcap_path = ~/.mutt/mailcap
 
 set sleep_time = 0
+set copy = no
 
 unset mark_old
 set wait_key = no
 unset move
 set beep_new
+
+set tilde
+unset markers
 
 # solarized ;)
 source ~/downloads/GIT/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
@@ -64,5 +85,8 @@ bind editor <Tab> complete-query
 
 set ssl_force_tls = yes
 unset ssl_starttls
+
+# always show the firsr message when changing 'folders'
+folder-hook . exec first-entry
 
 source ~/.mutt/accounts/personal

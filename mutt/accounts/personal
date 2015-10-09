@@ -2,16 +2,18 @@
 set my_name = "Rodrigo Oliveira"
 set imap_user = mdkcore@gmail.com
 set imap_pass = `gpg2 --quiet --batch -d ~/.mutt/accounts/personal.asc`
-set folder = imaps://mdkcore@imap.gmail.com/
+set folder = imaps://mdkcore@gmail.com@imap.gmail.com/
+
+alternates rodrigo.golive@gmail.com rodrigo@thecoreme.org rodrigo@deadbodyoutline.com
 
 set spoolfile = +INBOX
-mailboxes +INBOX +rodrigo.golive
+mailboxes +INBOX +rodrigo.golive +DeadBodyOutline
 
 set postponed = +[Gmail]/Drafts
 set trash = +[Gmail]/Trash
 
 # SMTP
-set smtp_url = smtps://mdkcore@smtp.gmail.com/
+set smtp_url = smtps://mdkcore@gmail.com@smtp.gmail.com/
 set smtp_pass = $imap_pass
 set folder = imaps://$imap_user@imap.gmail.com/
 set from = $imap_user
