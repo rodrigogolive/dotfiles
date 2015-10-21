@@ -72,6 +72,14 @@
     ~/.zshrc: zshrc
     # vim and its bundles
     ~/.vimrc: vim/vimrc
-    ~/.vim/bundles.vim: vim/bundles.vim
+    ~/.vim/bundles.vim:
+        create: true
+        path: vim/bundles.vim
     #~/.asoundrc: asoundrc
     ~/.pythonrc: pythonrc
+    # tig
+    ~/.tigrc: tig/tigrc
+    ~/.tig/vim.tigrc:
+    ~/.tig/vim.tigrc:
+        create: true
+        path: tig/vim.tigrc
