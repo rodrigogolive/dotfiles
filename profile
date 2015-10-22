@@ -1,6 +1,6 @@
 # vim: set filetype=sh:
 
-ssh-reagent() {
+function ssh_reagent() {
     for agent in /tmp/ssh-*/agent.*
     do
         export SSH_AUTH_SOCK=$agent
@@ -99,12 +99,8 @@ _git_please() {
 # definicoes especificas por usuario
 if [ "$USER" = mdk ]
 then
-    # verifica se chave ssh ja esta adicionada ao sistema
-    ssh-add -L >> /dev/null
-    if [ $? = 1 ]
-    then
-        ssh-add
-    fi
+    # add ssh keys on demand
+    ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
     PATH="$HOME/.bin:/sbin:/usr/sbin:$PATH"
 
