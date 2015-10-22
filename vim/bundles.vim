@@ -187,6 +187,12 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 
+" just autoload on python files; toggle with <leader>ig
+augroup python_files
+    autocmd!
+    autocmd BufRead,BufNew *.py execute "IndentGuidesEnable"
+augroup END
+
 
 " vim-flake8
 map <F10> :call Flake8()<cr>
@@ -202,10 +208,3 @@ let g:flake8_warning_marker='WW'
 let g:flake8_pyflake_marker='FF'
 let g:flake8_complexity_marker='CC'
 let g:flake8_naming_marker='NN'
-
-
-" just autoload on python files; toggle with <leader>ig
-augroup python_files
-    autocmd!
-    autocmd BufRead,BufNew *.py execute "IndentGuidesEnable"
-augroup END
