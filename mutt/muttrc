@@ -78,6 +78,19 @@ unset markers
 
 # solarized ;)
 source ~/downloads/GIT/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+# st was displaying me some bright colors, differently from xterm,
+# so we change some colors and now they are visually the same (but still
+# different from just applying raw (mutt-colors-solarized-dark-16 color scheme).
+color status     color10 black
+color index      color11 default "~R"      # read messages
+color index      color10 default "~v"      # messages part of a collapsed thread
+color index      color10 default "~P"      # messages from me
+color index      color11 default "~R~p!~F" # messages to me
+color hdrdefault color12 default
+color header     color10 default "^(From)"
+color signature  color11 default
+color body       color10 default "^gpg: "
+color body       color10 red     "^gpg: BAD signature from.*"
 
 # goobook
 bind editor <Tab> complete-query
@@ -88,5 +101,8 @@ unset ssl_starttls
 
 # always show the firsr message when changing 'folders'
 folder-hook . exec first-entry
+
+set header_cache = ~/.cache/mutt/
+set message_cachedir = $header_cache
 
 source ~/.mutt/accounts/personal
