@@ -83,6 +83,10 @@ Plugin 'sheerun/vim-polyglot'
 " vim-pydocstring | https://github.com/heavenshell/vim-pydocstring.git
 Plugin 'heavenshell/vim-pydocstring.git'
 
+
+" vim-indent-guides | https://github.com/nathanaelkane/vim-indent-guides
+Plugin 'nathanaelkane/vim-indent-guides'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -170,3 +174,18 @@ nnoremap <F5> :GundoToggle<CR>
 " vim-pydocstring
 inoremap <C-i> :Pydocstring<cr>
 nmap <silent> <C-_> <Plug>(pydocstring)
+
+
+" vim-indent-guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+" odd and even with same color :)
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
+
+" just autoload on python files; toggle with <leader>ig
+augroup python_files
+    autocmd!
+    autocmd BufRead,BufNew *.py execute "IndentGuidesEnable"
+augroup END

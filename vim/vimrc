@@ -39,6 +39,8 @@
 "   nerdcommenter
 "   <leader>c<space> = comment/uncomment
 "   <leader>y<space> = copy and comment
+"   vim-indent-guides
+"   <leader>ig = toggle indent guides
 " // = search visual selected text
 " C-_ = insert pydocstring
 
