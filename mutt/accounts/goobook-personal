@@ -1,6 +1,7 @@
 [DEFAULT]
 email: mdkcore@gmail.com
-passwordeval: gpg2 --quiet --batch -d ~/.mutt/accounts/personal.asc
+
+oauth_db_filename: ~/.mutt/accounts/goobook_auth-personal.json
 
 cache_filename: ~/.cache/goobook-personal
 cache_expiry_hours: 24
