@@ -6,11 +6,11 @@
         - "You must install goobook to fetch/add contacts from Google\n\tex.: easy_install goobook"
     # git
     -
-        - git clone --recursive https://github.com/git/git.git ~/downloads/GIT/git
-        - "Cloning GIT dependency (check for alternatives)"
+        - wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -N -P ~/.extras/
+        - "Downloading GIT completion dependency"
     -
-        - ln -s ~/downloads/GIT/git/contrib/completion/git-prompt.sh ~/.git-prompt.sh
-        - "Linking 'git-prompt.sh'"
+        - wget https://raw.githubusercontent.com/jonas/tig/master/contrib/vim.tigrc -N -P ~/.extras/
+        - "Downloading TIG vim keybindings dependency"
     # powerline
     -
         - git clone --recursive https://github.com/powerline/powerline.git ~/downloads/GIT/powerline
@@ -78,8 +78,4 @@
     #~/.asoundrc: asoundrc
     ~/.pythonrc: pythonrc
     # tig
-    ~/.tigrc: tig/tigrc
-    ~/.tig/vim.tigrc:
-    ~/.tig/vim.tigrc:
-        create: true
-        path: tig/vim.tigrc
+    ~/.tigrc: tigrc

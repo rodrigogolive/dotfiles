@@ -1,2 +1,2 @@
 # source: https://github.com/jonas/tig/blob/master/contrib/vim.tigrc
-source ~/.tig/vim.tigrc
+source ~/.extras/vim.tigrc

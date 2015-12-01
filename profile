@@ -128,7 +128,7 @@ then
     alias mplayer-hdmi='mplayer -ao alsa:device=hw=0.3 -fs -subfont-text-scale 3.5'
 fi
 
-. ~/.git-prompt.sh # symbolic link to the git repository completion script
+. ~/.extras/git-prompt.sh # symbolic link to the git repository completion script
 
 # definicoes globais
 stty -ixon
