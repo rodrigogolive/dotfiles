@@ -29,6 +29,10 @@ eval "$(fasd --init auto)"
 # s | https://github.com/haosdent/s
 source $HOME/downloads/GIT/s/s.sh
 
+# XXX start using a zsh plugin manager (oh-my-zsh has so many old plugins)
+# git-flow-completion | https://github.com/petervanderdoes/git-flow-completion
+source $HOME/downloads/GIT/git-flow-completion/git-flow-completion.zsh
+
 
 # poweline
 if [ -n "$DISPLAY" ]
