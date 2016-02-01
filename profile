@@ -143,7 +143,7 @@ alias less='less -R'
 
 alias ls='ls --color=always'
 alias nls='ls -1 | wc -l'
-alias tls='ls -lt --color --ignore=\*~ | tr -s " " | head | grep -v total | cut -d" " -f6-10'
+alias tls='ls -ot --color --ignore=\*~ | head | grep -v "total" | tr -s " " | cut -d" " -f5- | column -t'
 alias als='ls -la'
 
 alias bkpchrome='rm -rf ~/.config/chromium_BKP/; cp -r ~/.config/chromium{,_BKP}'
