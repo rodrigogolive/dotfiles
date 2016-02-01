@@ -40,6 +40,7 @@
 "   nerdcommenter
 "   <leader>c<space> = comment/uncomment
 "   <leader>y<space> = copy and comment
+" // = search visual selected text
 
 
 " bind caps lock (F16) to toggle insert/command mode
@@ -191,3 +192,7 @@ augroup FastEscape
     au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
 augroup END
+
+
+" search visual selected text
+vnoremap // y/<C-R>"<CR>"
