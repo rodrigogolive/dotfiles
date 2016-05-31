@@ -1,24 +1,23 @@
 " Help:
 "
-" ZS = save current file
-" ZA = save all opened files
-" QQ = quit all opened files
-" F2 = paste toggle
-" F3 = save session (uses unite-session)
-" F4 = clear hl search
-" F5 = Gundo toggle
-" F6 = Next syntastic error (S-F6 = previous error)
-" F7 = FSSplit left
-" F8 = FSHere
-" F9 = convert current file to utf-8
+" ZS  = save current file
+" ZA  = save all opened files
+" QQ  = quit all opened files
+" F2  = paste toggle
+" F3  = save session (uses unite-session)
+" F4  = clear hl search
+" F5  = Gundo toggle
+" F6  = Next syntastic error (S-F6 = previous error)
+" F7  = FSSplit left
+" F8  = FSHere
+" F9  = convert current file to utf-8
+" F10 = run flake8-vim
 " C-Space = YouCompleteMe
-" XX<C-l> = SnipMate
 " CapsLock = toggle insert/normal mode
 " + = expand region
 " _ = shrink region
 " up,down,left,right = move through splits
 " C-[j,k,h,l] = move through splits AND tmux
-" C-k = neosnippet expand (when on insert mode)
 " f = leader
 "   EasyMotion
 "   <leader>w =  forward
@@ -41,6 +40,11 @@
 "   <leader>c<space> = comment/uncomment
 "   <leader>y<space> = copy and comment
 " // = search visual selected text
+" UltiSnips
+"   C-l = expand
+"   C-h = list
+"   C-j = jump forward
+"   C-k = jump backward
 
 
 " bind caps lock (F16) to toggle insert/command mode

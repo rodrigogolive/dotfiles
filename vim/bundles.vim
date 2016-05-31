@@ -19,15 +19,11 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
 
 
-" SnipMate dependencies
-" https://github.com/MarcWeber/vim-addon-mw-utils
-Plugin 'MarcWeber/vim-addon-mw-utils'
-" https://github.com/tomtom/tlib_vim
-Plugin 'tomtom/tlib_vim'
+" UltiSnips dependencies
 " https://github.com/honza/vim-snippets
 Plugin 'honza/vim-snippets'
-" SnipMate | https://github.com/garbas/vim-snipmate
-Plugin 'garbas/vim-snipmate'
+" UltiSnips | https://github.com/SirVer/ultisnips
+Plugin 'SirVer/ultisnips'
 
 
 " vim-solarized | https://github.com/altercation/vim-colors-solarized
@@ -50,18 +46,14 @@ Plugin 'Shougo/unite-outline'
 Plugin 'Shougo/unite-session'
 " neomru | https://github.com/Shougo/neomru.vim
 Plugin 'Shougo/neomru.vim'
+" neoyank | https://github.com/Shougo/neoyank.vim
+Plugin 'Shougo/neoyank.vim'
 " vimproc | https://github.com/Shougo/vimproc.vim | NOTE: run 'make'
 Plugin 'Shougo/vimproc.vim'
 
 
 " vim-tmux-navigator | https://github.com/christoomey/vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
-
-
-" neosnippet | https://github.com/Shougo/neosnippet.vim
-Plugin 'Shougo/neosnippet'
-" neosnippet-snippets | https://github.com/Shougo/neosnippet-snippets
-Plugin 'Shougo/neosnippet-snippets'
 
 
 " context_filetype | https://github.com/Shougo/context_filetype.vim
@@ -106,11 +98,11 @@ let g:ycm_warning_symbol = '×'
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
-" SnipMate | https://github.com/garbas/vim-snipmate
-let g:snips_author = 'Rodrigo Oliveira'
-imap <C-l> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-l> <esc>a<Plug>snipMateNextOrTrigger
-
+" UltiSnips | https://github.com/SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsListSnippets="<C-h>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 " vim-solarized | https://github.com/altercation/vim-colors-solarized
 syntax enable
@@ -133,8 +125,9 @@ call unite#custom#profile('default', 'context', {
     \'short_source_names': 1,
 \})
 call unite#custom#source('line,outline','matchers','matcher_fuzzy')
-call unite#custom#default_action('file', 'tabopen')
-call unite#custom#default_action('buffer', 'goto')
+" TODO look on tab/split/vsplit-switch actions
+call unite#custom#default_action('file,buffer', 'tabopen')
+"call unite#custom#default_action('buffer', 'goto')
 let g:unite_force_overwrite_statusline=0
 let g:unite_source_history_yank_enable=1
 let g:unite_source_file_mru_long_limit=3000
@@ -148,7 +141,7 @@ nnoremap <leader>m :Unite -buffer-name=file_mru file_mru<cr>
 nnoremap <leader>p :Unite -buffer-name=files buffer file_mru bookmark file_rec/async<cr>
 nnoremap <leader>h :Unite -buffer-name=buffer buffer<cr>
 nnoremap <leader>y :Unite -buffer-name=history_yank history/yank<cr>
-nnoremap <leader>/ :Unite -buffer-name=grep grep:.<cr>
+nnoremap <leader>/ :Unite -buffer-name=grep -default-action=tabdrop grep:.<cr>
 nnoremap <leader>o :Unite -buffer-name=outline -horizontal -direction=above outline<cr>
 nnoremap <leader>s :Unite -no-split session<cr>
 au FileType unite inoremap <buffer><expr> <C-s> unite#do_action('split')
@@ -159,17 +152,6 @@ autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
     nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction
-
-
-" neosnippet | https://github.com/Shougo/neosnippet.vim
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
 
 
 " FSwitch | https://github.com/vim-scripts/FSwitch
