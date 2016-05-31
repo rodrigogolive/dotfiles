@@ -1,2 +1,5 @@
 # source: https://github.com/jonas/tig/blob/master/contrib/vim.tigrc
 source ~/.extras/vim.tigrc
+
+bind generic cv !git commit -v
+bind generic cs !git commit -sv
