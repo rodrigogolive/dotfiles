@@ -111,11 +111,12 @@ PATH="$HOME/.bin:$PATH"
 PATH="/sbin:/usr/sbin:$PATH"
 
 # osx
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-MANPATH="/opt/local/share/man:$MANPATH"
-PATH="/opt/local/libexec/gnubin/:$PATH"
-
+# brew
+PATH="/usr/local/bin/:$PATH"
 PATH="/usr/local/sbin/:$PATH"
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 alias tig='TERM=screen-256color tig'
 alias weechat='TERM=screen-256color weechat'
