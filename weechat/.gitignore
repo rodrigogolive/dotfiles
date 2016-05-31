@@ -1,0 +1,9 @@
+logs/
+weechat.log
+
+ssl
+sec.conf
+
+lua/
+perl/
+python/
