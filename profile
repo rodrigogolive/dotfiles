@@ -106,13 +106,19 @@ then
 
     # DROPCORE ;)
     export DROPCORE="$HOME/DockZ/DropCore"
+
+    # brew
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
     PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-    MANPATH="/opt/local/share/man:$MANPATH"
-    PATH="/opt/local/libexec/gnubin/:$PATH"
 
     PATH="/usr/local/sbin/:$PATH"
     PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
     PATH="/opt/Qt5.4.0/5.4/clang_64/bin/:$PATH"
+
+    # brew
+    PATH="/usr/local/bin/:$PATH"
 
     alias tig='TERM=screen-256color tig'
     alias weechat='TERM=screen-256color weechat'
