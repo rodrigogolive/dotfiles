@@ -87,6 +87,10 @@ Plugin 'heavenshell/vim-pydocstring.git'
 " vim-indent-guides | https://github.com/nathanaelkane/vim-indent-guides
 Plugin 'nathanaelkane/vim-indent-guides'
 
+
+" vim-flake8 | https://github.com/nvie/vim-flake8
+Plugin 'nvie/vim-flake8'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -172,7 +176,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 
 " vim-pydocstring
-inoremap <C-i> :Pydocstring<cr>
 nmap <silent> <C-_> <Plug>(pydocstring)
 
 
@@ -183,6 +186,23 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
+
+
+" vim-flake8
+map <F10> :call Flake8()<cr>
+let g:flake8_show_in_gutter=1
+let g:flake8_quickfix_location="below"
+highlight link Flake8_Error WarningMsg
+highlight link Flake8_Warning WarningMsg
+highlight link Flake8_Complexity WarningMsg
+highlight link Flake8_Naming WarningMsg
+highlight link Flake8_PyFlake WarningMsg
+let g:flake8_error_marker='EE'
+let g:flake8_warning_marker='WW'
+let g:flake8_pyflake_marker='FF'
+let g:flake8_complexity_marker='CC'
+let g:flake8_naming_marker='NN'
+
 
 " just autoload on python files; toggle with <leader>ig
 augroup python_files

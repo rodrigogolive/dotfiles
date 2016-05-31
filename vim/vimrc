@@ -42,7 +42,12 @@
 "   vim-indent-guides
 "   <leader>ig = toggle indent guides
 " // = search visual selected text
-" C-_ = insert pydocstring
+" C-_ = insert pydocstring (normal mode)
+" UltiSnips
+"   C-l = expand
+"   C-h = list
+"   C-j = jump forward
+"   C-k = jump backward
 
 
 " bind caps lock (F16) to toggle insert/command mode
