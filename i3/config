@@ -20,8 +20,8 @@ floating_modifier $mod
 # hide borders adjacent to the screen edge
 hide_edge_borders both
 
-# start a terminal (probably will change to urxvt or st in the future)
-bindsym $mod+Return exec --no-startup-id xterm
+# start a terminal
+bindsym $mod+Return exec --no-startup-id st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -136,7 +136,7 @@ client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
 bar {
     status_command $HOME/.i3/scripts/conky-i3bar
     position top
-    #tray_output primary
+    tray_output LVDS1
 
     # solarized again :D
     colors {
@@ -157,9 +157,10 @@ for_window [title="qmlscene"]       floating enable
 
 for_window [class="Kmix"]           floating enable
 for_window [class="Plasma-windowed"] floating enable
+for_window [class="ld35"] floating enable, move position center, move workspace number 2
 
-# TODO lock screen
-#bindsym $mod+Ctrl+l exec i3lock
+# lock screen
+bindsym $mod+Ctrl+l exec xlock
 
 # mouse things
 focus_follows_mouse no
@@ -168,12 +169,10 @@ mouse_warping       none
 # init commands
 # caps as an additional esc \o/
 exec --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2 -option caps:escape
-exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1
-exec --no-startup-id synclient VertScrollDelta=-65
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 ####################
 exec --no-startup-id owncloud&
-exec --no-startup-id kdeconnectd
-exec_always --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # workspace assigns
 assign [class="^Chromium-dev$"] 1
