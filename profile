@@ -117,8 +117,8 @@ then
     #
 
     # TV shows and movies :D
-    export TV_SHOWS="/run/media/mdk/xbmc/TV_Shows"
-    export MOVIES="/run/media/mdk/xbmc/Movies"
+    export TV_SHOWS="/media/KODI/TV_Shows"
+    export MOVIES="/media/KODI/Movies"
 
     # DROPCORE ;)
     export DROPCORE="$HOME/DockZ/DropCore"
