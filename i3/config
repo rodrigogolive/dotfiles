@@ -153,8 +153,9 @@ bar {
 
 # special rules
 for_window [window_role="pop-up"]   floating enable
-for_window [title="qmlscene"]       floating enable
+for_window [window_role="task_dialog"] floating enable
 
+for_window [title="qmlscene"]       floating enable
 for_window [class="Kmix"]           floating enable
 for_window [class="Plasma-windowed"] floating enable
 for_window [class="ld35"] floating enable, move position center, move workspace number 2
