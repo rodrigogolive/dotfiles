@@ -185,3 +185,6 @@ eval $(dircolors ~/downloads/GIT/dircolors-solarized/dircolors.256dark)
 
 # my own completions
 source $HOME/.completions/*
+
+# private things *like access tokens, etc
+source $HOME/.private-osx
