@@ -79,6 +79,10 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 " vim-polyglot | https://github.com/sheerun/vim-polyglot
 Plugin 'sheerun/vim-polyglot'
 
+
+" vim-pydocstring | https://github.com/heavenshell/vim-pydocstring.git
+Plugin 'heavenshell/vim-pydocstring.git'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -161,3 +165,8 @@ nnoremap <F8> :FSHere<cr>
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
+
+
+" vim-pydocstring
+inoremap <C-i> :Pydocstring<cr>
+nmap <silent> <C-_> <Plug>(pydocstring)

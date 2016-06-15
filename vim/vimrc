@@ -40,11 +40,7 @@
 "   <leader>c<space> = comment/uncomment
 "   <leader>y<space> = copy and comment
 " // = search visual selected text
-" UltiSnips
-"   C-l = expand
-"   C-h = list
-"   C-j = jump forward
-"   C-k = jump backward
+" C-_ = insert pydocstring
 
 
 " bind caps lock (F16) to toggle insert/command mode
