@@ -7,6 +7,11 @@ Using [dotbot](https://github.com/anishathalye/dotbot) to manage, err... my dotf
 
 Just clone and run *./.install* (configuration on *.install.conf.yaml*)
 
+Scripts
+------
+There are some scripts bundled on my dotfiles (more like "helpers"), related to specific things (e.g. managing audio volume on i3).  
+For other scripts, see my [dotbins repo](https://github.com/rodrigogolive/dotbins) ;)
+
 Note for Slackware users
 ------------------------
 
