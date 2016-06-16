@@ -107,8 +107,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nvie/vim-flake8'
 
 
-" vimpdb | https://github.com/byronyi/vimpdb (look for ~/.vimpdbrc)
-Plugin 'byronyi/vimpdb'
+" vimpdb | https://github.com/gotcha/vimpdb (look for ~/.vimpdbrc)
+Plugin 'gotcha/vimpdb'
 
 
 " ale | https://github.com/w0rp/ale
