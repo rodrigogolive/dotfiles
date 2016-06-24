@@ -1,0 +1,10 @@
+" Add the following lines on cVim chrome extension option page:
+let configpath = '/home/mdk/.cvimrc'
+set localconfig
+""
+
+set noautofocus
+let barposition = "bottom"
+map T :buffer<Space>
+"imap <C-o> editWithVim
+"let vimcommand = "xterm -s vim"

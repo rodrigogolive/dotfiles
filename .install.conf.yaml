@@ -30,6 +30,8 @@
     ~/.tigrc: tigrc
     # weechat
     ~/.weechat: weechat
+    # cVim
+    ~/.cvimrc: cvimrc
 - shell:
     # mutt
     -
@@ -103,3 +105,7 @@
     -
       - mkdir -p ~/.weechat/python/autoload/; ln -s ~/downloads/GIT/weechat-scripts/python/lnotify.py ~/.weechat/python/autoload/lnotify.py
       - "Linking 'lnotify.py'"
+    # cVim
+    -
+        - ""
+        - "Depends on cVim Chromium extension, read ~/.cvimrc for more info"
