@@ -206,3 +206,7 @@ augroup END
 
 " search visual selected text
 vnoremap // y/<C-R>"<CR>"
+
+
+" temp fix; brew scp is not working to access servers :/
+let g:netrw_scp_cmd="/usr/bin/scp"
