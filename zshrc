@@ -14,7 +14,7 @@ source /opt/local/bin/virtualenvwrapper.sh-2.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
 
 # NOTE: do not forget to add fasd to your PATH
-plugins=(vi-mode vundle colored-man fasd extract virtualenv virtualenvwrapper)
+plugins=(vi-mode vundle colored-man fasd extract virtualenv virtualenvwrapper docker)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
