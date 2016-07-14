@@ -10,7 +10,7 @@ WORKON_HOME="~/.envs"
 source /opt/local/bin/virtualenvwrapper.sh-2.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
 
-plugins=(vi-mode vundle colored-man virtualenv virtualenvwrapper)
+plugins=(vi-mode vundle colored-man virtualenv virtualenvwrapper docker)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
