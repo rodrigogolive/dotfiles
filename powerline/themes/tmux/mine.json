@@ -14,7 +14,7 @@
     "segments": {
         "right": [
             {
-                "function": "powerline.segments.common.players.spotify_apple_script",
+                "function": "powerline.segments.common.players.spotify",
                 "name": "player"
             },
             {
