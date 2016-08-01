@@ -12,12 +12,16 @@ unset imap_passive
 set mail_check = 120
 
 # sidebar
-set sidebar_visible = yes
+set sidebar_visible
 set sidebar_width = 36
-set sidebar_delim = ' │'
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_divider_char = ' │'
+set sidebar_short_path
 set sidebar_delim_chars = '/'
+set mail_check_stats
 
 color sidebar_new cyan default
+color sidebar_divider black black
 
 # moving
 bind index,pager \cp sidebar-prev
