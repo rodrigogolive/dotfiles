@@ -113,7 +113,7 @@ fi
 
 . ~/.extras/git-prompt.sh # symbolic link to the git repository completion script
 
-# definicoes globais
+# global definitions
 stty -ixon
 
 export LANG=en_US.UTF-8
@@ -135,6 +135,10 @@ alias wget='wget -c'
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias vless='/usr/share/vim/vim74/macros/less.sh'
 alias make='bear -a make'
+
+# simple bell, usefull when waiting the completion of something on another
+# tmux window ;)
+alias bell='echo -n "\007"' # or 'tput bel'
 
 # global git exports; really they need to be empty values
 export GIT_PS1_SHOWDIRTYSTATE=mdk
