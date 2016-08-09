@@ -111,11 +111,9 @@ then
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-    PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
     PATH="/usr/local/sbin/:$PATH"
-    PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
-    PATH="/opt/Qt5.4.0/5.4/clang_64/bin/:$PATH"
+    PATH="/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/Current/bin:$PATH"
+    PATH="/opt/Qt5.5.1/5.5/clang_64/bin/:$PATH"
 
     # brew
     PATH="/usr/local/bin/:$PATH"
