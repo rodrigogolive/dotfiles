@@ -83,7 +83,8 @@ _git_please() {
 if [ "$USER" = mdk ]
 then
     # ssh keys (and gpg) on keychain
-    eval `keychain --eval --quiet --agents "ssh,gpg" --quick --inherit any succubus_git succubus_ed25519 B805DFBC`
+    # add keys after '--quick'
+    eval `keychain --eval --quiet --agents "ssh,gpg" --quick`
 
     PATH="$HOME/.bin:/sbin:/usr/sbin:$PATH"
 

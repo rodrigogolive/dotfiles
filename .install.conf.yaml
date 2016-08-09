@@ -109,3 +109,7 @@
     -
         - ""
         - "Depends on cVim Chromium extension, read ~/.cvimrc for more info"
+    # zce.zsh
+    -
+      - git clone --recursive https://github.com/hchbaw/zce.zsh.git ~/downloads/GIT/zce.zsh
+      - "Cloning zce.zsh dependency"

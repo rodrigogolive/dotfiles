@@ -33,6 +33,9 @@ source $HOME/downloads/GIT/s/s.sh
 # git-flow-completion | https://github.com/petervanderdoes/git-flow-completion
 source $HOME/downloads/GIT/git-flow-completion/git-flow-completion.zsh
 
+source $HOME/downloads/GIT/zce.zsh/zce.zsh
+bindkey -M vicmd "f" zce
+zstyle ':zce:*' bg 'fg=242'
 
 # poweline
 if [ -n "$DISPLAY" ]
@@ -82,5 +85,3 @@ bindkey -M viins "^[" vi-cmd-mode
 
 #damn delay
 KEYTIMEOUT=1
-
-fortune && echo
