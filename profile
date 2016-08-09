@@ -84,7 +84,7 @@ if [ "$USER" = rodrigo ]
 then
     # ssh keys (and gpg) on keychain
     # add keys after '--quick'
-    eval `keychain --eval --quiet --agents "ssh,gpg" --quick`
+    eval `keychain --eval --quiet --agents "ssh,gpg" --inherit any --quick succubus_git succubus_ed25519 B805DFBC`
 
     # PATHs definition
     PATH="$HOME/.bin/:$PATH"
