@@ -22,6 +22,30 @@
                 "priority": 50
             },
             {
+                "function": "powerline.segments.common.net.internal_ip",
+                "args": {
+                    "interface": "utun0"
+                },
+                "before": "utun0 ",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.net.internal_ip",
+                "args": {
+                    "interface": "en1"
+                },
+                "before": "en1 ",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.net.internal_ip",
+                "args": {
+                    "interface": "tap0"
+                },
+                "before": "tap0 ",
+                "priority": 50
+            },
+            {
                 "function": "powerline.segments.common.sys.uptime",
                 "priority": 50
             },
