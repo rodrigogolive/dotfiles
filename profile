@@ -122,6 +122,8 @@ alias tig='TERM=screen-256color tig'
 alias weechat='TERM=screen-256color weechat'
 alias htop='TERM=screen-256color htop'
 
+PATH="/opt/Qt5.5.1/5.5/clang_64/bin/:$PATH"
+
 alias ldd="otool -L"
 
 export DYLD_FALLBACK_LIBRARY_PATH="/opt/local/lib"
