@@ -1,22 +1,5 @@
 # vim: set filetype=sh:
 
-function ssh_reagent() {
-    for agent in /tmp/ssh-*/agent.*
-    do
-        export SSH_AUTH_SOCK=$agent
-
-        if ssh-add -l 2>&1 > /dev/null
-        then
-            echo "Found working SSH Agent:"
-            ssh-add -l
-
-            return
-        fi
-    done
-
-    echo "Cannot find ssh agent - maybe you should reconnect and forward it?"
-}
-
 # super grep, will show grep on 'less' if result be greater than the console height
 function sgrep(){
     result=$(grep -n --color=always --exclude=\*~ "$@" | sed 's/:/ +/')
@@ -99,8 +82,8 @@ _git_please() {
 # definicoes especificas por usuario
 if [ "$USER" = mdk ]
 then
-    # add ssh keys on demand
-    ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+    # ssh keys (and gpg) on keychain
+    eval `keychain --eval --quiet --agents "ssh,gpg" --quick --inherit any succubus_git succubus_ed25519 B805DFBC`
 
     PATH="$HOME/.bin:/sbin:/usr/sbin:$PATH"
 
