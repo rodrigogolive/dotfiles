@@ -8,10 +8,10 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # virtualenv + virtualenvwrapper
-VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 WORKON_HOME="~/.envs"
-source /opt/local/bin/virtualenvwrapper.sh-2.7
-export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
+source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 # NOTE: do not forget to add fasd to your PATH
 plugins=(vi-mode vundle colored-man fasd extract virtualenv virtualenvwrapper docker)
