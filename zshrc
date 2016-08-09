@@ -5,10 +5,10 @@ export ZSH=$HOME/downloads/GIT/oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 
 # virtualenv + virtualenvwrapper
-VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 WORKON_HOME="~/.envs"
-source /opt/local/bin/virtualenvwrapper.sh-2.7
-export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
+source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 plugins=(vi-mode vundle colored-man virtualenv virtualenvwrapper docker)
 
