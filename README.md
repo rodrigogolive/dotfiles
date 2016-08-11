@@ -7,6 +7,12 @@ Using [dotbot](https://github.com/anishathalye/dotbot) to manage, err... my dotf
 
 Just clone and run *./.install* (configuration on *.install.conf.yaml*)
 
+branches
+--------
+I've eliminated the concept of HOME/WORK branches, now will create branches per machine.
+
+'Why?' you can ask. Well, it's nice to do substantial adjustments on my master branch (common things, you know), and keep branches updated with that (like key bindings and common environment variables settings).
+
 Scripts
 ------
 There are some scripts bundled on my dotfiles (more like "helpers"), related to specific things (e.g. managing audio volume on i3).  
