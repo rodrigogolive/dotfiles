@@ -112,3 +112,6 @@ set message_cachedir = $header_cache
 #source ~/.mutt/accounts/personal
 # not sourcing an account because I'm using 2 different instances of mutt,
 # one for each type of account. Example: mutt -e 'source ~/.mutt/accounts/work'
+
+# 'no authenticator available' problem on OSX
+set smtp_authenticators = 'gssapi:login'
