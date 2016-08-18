@@ -7,6 +7,7 @@
 " F3  = save session (uses unite-session)
 " F4  = clear hl search
 " F5  = Gundo toggle
+" F5  = (insert mode) ticker from branch name
 " F6  = Next syntastic error (S-F6 = previous error)
 " F7  = FSSplit left
 " F8  = FSHere
@@ -210,3 +211,10 @@ vnoremap // y/<C-R>"<CR>"
 
 " temp fix; brew scp is not working to access servers :/
 let g:netrw_scp_cmd="/usr/bin/scp"
+
+
+" extract ticket information from branch name (jira)
+imap <buffer><expr> <F5> GitTicketFromBranch()
+function! GitTicketFromBranch()
+    return system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //' | cut -d'/' -f2 | cut -d'-' -f1-2 | tr -d '\n'")
+endfunction
