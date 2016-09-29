@@ -32,6 +32,14 @@
             {
                 "function": "powerline.segments.common.net.internal_ip",
                 "args": {
+                    "interface": "en0"
+                },
+                "before": "en0 ",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.net.internal_ip",
+                "args": {
                     "interface": "en1"
                 },
                 "before": "en1 ",
