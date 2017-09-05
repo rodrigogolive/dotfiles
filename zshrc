@@ -87,7 +87,7 @@ KEYTIMEOUT=1
 # fzf | https://github.com/junegunn/fzf
 # # TODO test if 'ag' is available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='/usr/bin/ag -g ""'
+export FZF_DEFAULT_COMMAND='/usr/local/bin/ag -g ""'
 export FZF_DEFAULT_OPTS="--no-256 \
     --no-mouse \
     --ansi \
