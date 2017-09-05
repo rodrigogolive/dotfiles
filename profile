@@ -1,5 +1,7 @@
 # vim: set filetype=sh:
 
+export GPG_SOCKET_DIR="/usr/local/var/run/gpg-sockets/$USER/"
+
 # super grep, will show grep on 'less' if result be greater than the console height
 function sgrep(){
     result=$(grep -n --color=always --exclude=\*~ "$@" | sed 's/:/ +/')
@@ -116,18 +118,26 @@ PATH="/usr/local/bin/:$PATH"
 PATH="/usr/local/sbin/:$PATH"
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 alias tig='TERM=screen-256color tig'
 alias weechat='TERM=screen-256color weechat'
 alias htop='TERM=screen-256color htop'
 
-PATH="/opt/Qt5.5.1/5.5/clang_64/bin/:$PATH"
+# Qt
+PATH="/opt/Qt5.6.1/5.6/clang_64/bin:$PATH"
 
 alias ldd="otool -L"
 
 export DYLD_FALLBACK_LIBRARY_PATH="/opt/local/lib"
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
+# gpg-agent
+export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
+
+# nvim and clipboard issues on sierra -.-
+alias nvim="reattach-to-user-namespace -l nvim"
 # osx
 
 export PYTHONPATH=$HOME/downloads/GIT/powerline
@@ -173,6 +183,13 @@ alias make='bear -a make'
 # tmux window ;)
 alias bell='echo -n "\007"' # or 'tput bel'
 
+alias open="reattach-to-user-namespace open"
+
+alias ssh="autossh -M 0"
+
+alias gif="mpv --loop-file"
+alias music="mpv --lavfi-complex='[aid1]asplit=3[ao][a0][a1];[a0]showwaves=s=640x240[waves];[a1]showspectrum=s=640x240[spectrum]; [waves][spectrum] vstack[vo]'"
+
 # global git exports; really they need to be empty values
 export GIT_PS1_SHOWDIRTYSTATE=mdk
 export GIT_PS1_SHOWSTASHSTATE=mdk
@@ -199,3 +216,5 @@ export PASSWORD_STORE_GIT=$HOME/DockZ/ownButt/password-store
 
 # private things *like access tokens, etc
 source $HOME/.private-osx
+
+export PATH="$HOME/.cargo/bin:$PATH"
