@@ -106,7 +106,7 @@ _git_please() {
 
 # ssh keys (and gpg) on keychain
 # add keys after '--quick'
-eval `keychain --eval --quiet --agents "ssh,gpg" --inherit any --quick succubus_git succubus_ed25519 B805DFBC`
+eval `keychain --eval --quiet --agents "ssh" --inherit any succubus_git succubus_ed25519`
 
 # PATHs definition
 PATH="$HOME/.bin:$PATH"
