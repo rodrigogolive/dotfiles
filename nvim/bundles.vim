@@ -95,6 +95,10 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sheerun/vim-polyglot'
 
 
+" ale | https://github.com/w0rp/ale
+Plugin 'w0rp/ale'
+
+
 " vim-pydocstring | https://github.com/heavenshell/vim-pydocstring.git
 Plugin 'heavenshell/vim-pydocstring.git'
 
@@ -109,10 +113,6 @@ Plugin 'nvie/vim-flake8'
 
 " vimpdb | https://github.com/gotcha/vimpdb (look for ~/.vimpdbrc)
 Plugin 'gotcha/vimpdb'
-
-
-" ale | https://github.com/w0rp/ale
-Plugin 'w0rp/ale'
 
 
 " fzf.vim | https://github.com/junegunn/fzf.vim
