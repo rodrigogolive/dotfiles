@@ -116,7 +116,7 @@ Plugin 'w0rp/ale'
 
 
 " fzf.vim | https://github.com/junegunn/fzf.vim
-set rtp+=~/downloads/GIT/fzf
+set rtp+=~/Downloads/GIT/fzf
 Plugin 'junegunn/fzf.vim'
 
 
