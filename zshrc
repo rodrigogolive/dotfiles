@@ -1,7 +1,7 @@
 export PATH="$HOME/.bin:$PATH"
 export EDITOR="nvim"
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/downloads/GIT/oh-my-zsh
+export ZSH=$HOME/Downloads/GIT/oh-my-zsh
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
