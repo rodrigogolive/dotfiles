@@ -11,7 +11,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # NOTE: do not forget to add fasd to your PATH
-plugins=(vi-mode vundle fasd extract colored-man-pages)
+plugins=(vi-mode vundle fasd extract colored-man-pages virtualenv virtualenvwrapper)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
