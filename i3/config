@@ -73,6 +73,18 @@ bindsym $mod+c focus child
 # set default layout mode to tabbed
 workspace_layout tabbed
 
+# assign workspaces
+workspace 1 output eDP1
+workspace 3 output eDP1
+workspace 5 output eDP1
+workspace 7 output eDP1
+workspace 9 output eDP1
+workspace 2 output DP2
+workspace 4 output DP2
+workspace 6 output DP2
+workspace 8 output DP2
+workspace 10 output DP2
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -139,6 +151,7 @@ for_window [window_role="pop-up"]   floating enable
 for_window [window_role="task_dialog"] floating enable
 
 for_window [title="qmlscene"]       floating enable
+for_window [class="(?i)virtualbox Manager"] floating enable
 
 # lock screen
 # TODO startCmd keygen clear (ssh-agent)
