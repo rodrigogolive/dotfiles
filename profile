@@ -173,3 +173,6 @@ export PASSWORD_STORE_GIT=$HOME/DockZ/ownButt/password-store
 # use clang as c/c++ compiler as default
 export CC=clang
 export CXX=clang++
+
+export QT_FONT_DPI=112
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
