@@ -115,6 +115,10 @@ Plugin 'junegunn/fzf.vim'
 " vim-devicons | https://github.com/ryanoasis/vim-devicons
 Plugin 'ryanoasis/vim-devicons'
 
+
+" base16-vim | https://github.com/chriskempson/base16-vim
+Plugin 'chriskempson/base16-vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -270,3 +274,11 @@ nmap <silent> <F6> <Plug>(ale_next_wrap)
 " vim-devicons | https://github.com/ryanoasis/vim-devicons
 " uname -s
 let g:WebDevIconsOS = 'Linux'
+
+
+" base16-vim | https://github.com/chriskempson/base16-vim
+set termguicolors
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif

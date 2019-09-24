@@ -153,3 +153,9 @@ bindkey '^F' fzf-history-widget-accept-or-edit
 # TODO bindings should be done after setting all plugins
 # control + r
 bindkey "^R" history-incremental-pattern-search-backward
+
+# Base16 Shell
+BASE16_SHELL="$HOME/downloads/GIT/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
