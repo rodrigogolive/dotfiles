@@ -33,6 +33,36 @@ source $HOME/downloads/GIT/zce.zsh/zce.zsh
 bindkey -M vicmd "f" zce
 zstyle ':zce:*' bg 'fg=242'
 
+# powerlevel9k; only if on X
+if [ -n "$DISPLAY" ]
+then
+    # set powerlevel9k mode
+    POWERLEVEL9K_MODE='nerdfont-complete'
+
+    # prompt configuration
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable)
+    # ip os_icon ssh pyenv? TODO
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs pyenv virtualenv vcs vi_mode)
+    #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs pyenv vcs vi_mode)
+
+    # context segment TODO
+    DEFAULT_USER=$USER
+    POWERLEVEL9K_ALWAYS_SHOW_USER=true
+
+    # dir segment
+    POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+    POWERLEVEL9K_SHORTEN_DELIMITER=""
+    POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+    # status segment
+    POWERLEVEL9K_STATUS_OK=false
+
+    # vcs segment
+    POWERLEVEL9K_SHOW_CHANGESET=true
+
+    source $HOME/downloads/GIT/powerlevel9k/powerlevel9k.zsh-theme
+fi
+
 # hide commands from history that starts with a space
 export HIST_IGNORE_SPACE=1
 
