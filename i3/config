@@ -153,6 +153,9 @@ for_window [window_role="task_dialog"] floating enable
 for_window [title="qmlscene"]       floating enable
 for_window [class="(?i)virtualbox Manager"] floating enable
 
+# Sour
+for_window [title="app.py"]       floating enable
+
 # lock screen
 # TODO startCmd keygen clear (ssh-agent)
 bindsym $mod+Ctrl+l exec xlock -xinerama
