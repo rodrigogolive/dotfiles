@@ -247,11 +247,8 @@ nmap <silent> <C-_> <Plug>(pydocstring)
 " vim-indent-guides
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-" odd and even with same color :)
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
-
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_color_change_percent = 2
 
 " just autoload on python files; toggle with <leader>ig
 augroup python_files
@@ -281,4 +278,5 @@ set termguicolors
 if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
+    let g:airline_theme='base16'
 endif
