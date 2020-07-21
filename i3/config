@@ -27,7 +27,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,run -show combi -modi combi -bg #073642 -fg #93a1a1 -hlbg #657b83 -hlfg #fdf6e3 -font Input Nerd Font\ 10"
+bindsym --release $mod+d exec --no-startup-id "rofi -show combi"
 
 # change focus
 bindsym $mod+$left  focus left
@@ -139,12 +139,32 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# solarized colors (slightly modified)
-# class                 border  bg      text    indic
-client.focused          #657b83 #657b83 #fdf6e3 #657b83
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused        #073642 #073642 #93a1a1 #586e75
-client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
+# colors from Xresources, based on base16
+set_from_resource $base00 color0    #000000
+set_from_resource $base01 color18   #000000
+set_from_resource $base02 color19   #000000
+set_from_resource $base03 color8    #000000
+set_from_resource $base04 color20   #000000
+set_from_resource $base05 color7    #000000
+set_from_resource $base06 color21   #000000
+set_from_resource $base07 color15   #000000
+set_from_resource $base08 color1    #000000
+set_from_resource $base09 color16   #000000
+set_from_resource $base0A color3    #000000
+set_from_resource $base0B color2    #000000
+set_from_resource $base0C color6    #000000
+set_from_resource $base0D color4    #000000
+set_from_resource $base0E color5    #000000
+set_from_resource $base0F color17   #000000
+
+# class                 border  backgr  text    indic   child_border
+client.focused          $base05 $base0D $base00 $base0D $base0C
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+# colors
 
 # special rules
 for_window [window_role="pop-up"]   floating enable
@@ -167,6 +187,12 @@ mouse_warping       none
 
 # init commands
 ####################
+# TODO dunst launcher scipt, reading colors from xresources?
+exec_always --no-startup-id dunst \
+    -lb "$base02" -lf "$base05" \
+    -nb "$base01" -nf "$base03" \
+    -cb "$base08" -cf "$base06" \
+    -frame_color "$base05" -sep_color "$base05"
 exec_always --no-startup-id $HOME/.i3/scripts/polybar_launcher&
 exec --no-startup-id nextcloud&
 exec --no-startup-id nm-applet
