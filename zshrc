@@ -12,7 +12,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 VIRTUAL_ENV_DISABLE_PROMPT="true"
 
 # NOTE: do not forget to add fasd to your PATH
-plugins=(vi-mode vundle fasd extract colored-man-pages pyenv pipenv vagrant)
+#plugins=(vi-mode vundle fasd extract colored-man-pages pyenv pipenv vagrant)
+plugins=(vi-mode vundle fasd extract colored-man-pages pyenv pipenv vagrant npm)
 
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=($HOME/downloads/GIT/zsh-completions/src $fpath)
@@ -42,7 +43,8 @@ then
     # prompt configuration
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable)
     # ip os_icon ssh pyenv? TODO
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs pyenv virtualenv vcs vi_mode)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs pyenv virtualenv
+        vcs vi_mode)
     #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs pyenv vcs vi_mode)
 
     # context segment TODO
