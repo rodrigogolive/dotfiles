@@ -1,0 +1,36 @@
+* {
+                                 /* rgba */
+    red:                         #dc322fFF; /* base08 100% */
+    blue:                        #268bd2FF; /* base0D 100% */
+    white: #fdf6e3FF; /* base07 100% */
+    lightfg:                     #eee8d5FF; /* base06 100% */
+    lightbg:                     #073642FF; /* base01 100% */
+    foreground:                  #93a1a1FF; /* base05 100% */
+    background:                  #002b36FF; /* base00 100% */
+    background-color:            #002b3600; /* base00   0% */
+    spacing:                     2;
+    separatorcolor:              var(foreground);
+    border-color:                var(foreground);
+    selected-normal-foreground:  var(white);
+    selected-normal-background:  var(lightbg);
+    /*selected-normal-foreground:  var(lightbg);*/
+    /*selected-normal-background:  var(lightfg);*/
+    selected-active-foreground:  var(background);
+    selected-active-background:  var(blue);
+    selected-urgent-foreground:  var(background);
+    selected-urgent-background:  var(red);
+    normal-foreground:           var(foreground);
+    normal-background:           var(background);
+    active-foreground:           var(blue);
+    active-background:           var(background);
+    urgent-foreground:           var(red);
+    urgent-background:           var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-normal-background: var(background);
+    /*alternate-normal-background: var(lightbg);*/
+    alternate-active-foreground: var(blue);
+    alternate-active-background: var(lightbg);
+    alternate-urgent-foreground: var(red);
+    alternate-urgent-background: var(lightbg);
+}
+/* vim:ft=css
