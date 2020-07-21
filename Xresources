@@ -1,1 +1,3 @@
+#include "./downloads/GIT/base16-xresources/xresources/base16-solarized-dark-256.Xresources"
+
 Xft.dpi: 112
