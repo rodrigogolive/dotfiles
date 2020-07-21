@@ -112,14 +112,15 @@ KEYTIMEOUT=1
 # # TODO test if 'ag' is available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='/usr/bin/ag -g ""'
-export FZF_DEFAULT_OPTS="--no-256 \
-    --no-mouse \
+export FZF_DEFAULT_OPTS="--no-mouse \
     --ansi \
     -0 -1 \
-    --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254 \
-    --color info:254,prompt:37,spinner:108,pointer:235,marker:235"
+    --color=bg+:18,bg:0,spinner:6,hl:4 \
+    --color=fg:20,header:4,info:3,pointer:6 \
+    --color=marker:6,fg+:21,prompt:3,hl+:4"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview '$HOME/.config/ranger/scope.sh {}' \
+export FZF_CTRL_T_OPTS="--preview '$HOME/.config/ranger/scope.sh {} \
+        $(tput cols) $(tput lines) $HOME/.cache/ranger False' \
     --bind 'ctrl-t:toggle-preview'"
 
 # based on https://github.com/junegunn/fzf/issues/477#issuecomment-444053054
@@ -127,7 +128,9 @@ fzf-history-widget-accept-or-edit() {
     local selected num
     setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
     selected=( $(fc -rl 1 |
-        FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort --expect=ctrl-e $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd))
+        FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS \
+        -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort --expect=ctrl-e \
+        $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd))
     )
 
     local ret=$?
