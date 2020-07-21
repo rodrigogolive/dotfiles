@@ -231,6 +231,10 @@ call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>', 'noremap
 " normal mode mappings
 
 
+" vim-tmux-navigator | https://github.com/christoomey/vim-tmux-navigator
+let g:tmux_navigator_disable_when_zoomed = 1
+
+
 " FSwitch | https://github.com/vim-scripts/FSwitch
 nnoremap <F7> :FSSplitLeft<cr>
 nnoremap <F8> :FSHere<cr>
