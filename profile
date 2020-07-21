@@ -2,7 +2,7 @@
 
 # super grep, will show grep on 'less' if result be greater than the console height
 function sgrep(){
-    result=$(grep -n --color=always --exclude=\*~ "$@" | sed 's/:/ +/')
+    result=$(grep -n --color=auto --exclude=\*~ "$@" | sed 's/:/ +/')
 
     lines=$(echo "${result}" | wc -l)
 
@@ -128,12 +128,12 @@ stty -ixon
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export GREP_COLOR="03;33"
+export GREP_COLORS="03;33"
 
-alias grep='grep -n --color=always --exclude=\*~'
+alias grep='grep -n --color=auto --exclude=\*~'
 alias less='less -R'
 
-alias ls='ls --color=always'
+alias ls='ls --color=auto'
 alias nls='ls -1 | wc -l'
 alias tls='ls -ot --color --ignore=\*~ | head | grep -v "total" | tr -s " " | cut -d" " -f5- | column -t'
 alias als='ls -la'
@@ -142,6 +142,8 @@ alias wget='wget -c'
 
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias make='bear -a make'
+
+alias diff='diff --color=auto'
 
 # simple bell, usefull when waiting the completion of something on another
 # tmux window ;)
@@ -175,4 +177,5 @@ export CC=clang
 export CXX=clang++
 
 export QT_FONT_DPI=112
+#export GDK_DPI_SCALE=$QT_FONT_DPI
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
